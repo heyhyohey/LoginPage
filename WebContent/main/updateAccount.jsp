@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +31,8 @@
 					</div>
 					<div class="input-group">
 						<b>전화번호</b><br> <input type="tel" class="input-form"
-							name="phonenumber" maxlength="11" placeholder="- 없이 입력 ex) 01012345678"><br>
+							name="phonenumber" maxlength="11"
+							placeholder="- 없이 입력 ex) 01012345678"><br>
 					</div>
 					<div class="input-group">
 						<b>이메일</b><br> <input type="email" class="input-form-small"
@@ -45,7 +46,8 @@
 					</div>
 					<div class="input-group">
 						<b>자기소개</b><br>
-						<textarea class="input-form-long" rows="5" cols="60" name="introduce"></textarea>
+						<textarea class="input-form-long" rows="5" cols="60"
+							name="introduce"></textarea>
 					</div>
 					<input type="submit" class="submit-button" value="회원정보수정">
 				</form>

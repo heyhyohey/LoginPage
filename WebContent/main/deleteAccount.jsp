@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,8 +24,8 @@
 							name="userpw" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
 					</div>
 					<div class="input-group">
-						<b>"정말 탈퇴하겠습니다"를 입력하세요</b><br> <input type="text" class="input-form"
-							name="real" maxlength="20"><br>
+						<b>"정말 탈퇴하겠습니다"를 입력하세요</b><br> <input type="text"
+							class="input-form" name="real" maxlength="20"><br>
 					</div>
 					<div id="menu-area">
 						<button onclick="location.href='/Login/main/main.jsp'"

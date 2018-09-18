@@ -14,8 +14,8 @@
 		</div>
 		<div id="content">
 			<div id="input-area">
-                <p>님 안녕하세요!</p>
-            </div>
+				<p>님 안녕하세요!</p>
+			</div>
 			<div id="menu-area">
 				<button onclick="location.href='/Login/main/login.jsp'"
 					class="submit-button">로그아웃</button>
