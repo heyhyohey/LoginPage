@@ -16,7 +16,7 @@
 		<div id="content">
 			<div id="input-area">
 				<form action="/Login/main/updateFinish.jsp" method="post">
-					<p>수정할 회원 정보를 입력하세요.</p>
+					<p>수정할 회원정보를 입력하세요.</p>
 					<div class="input-group">
 						<b>비밀번호</b><br> <input type="password" class="input-form"
 							name="userpw" maxlength="10" placeholder="10자 이내 영문,숫자"><br>

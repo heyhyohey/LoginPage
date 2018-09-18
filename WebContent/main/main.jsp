@@ -17,14 +17,17 @@
 				<p>님 안녕하세요!</p>
 			</div>
 			<div id="menu-area">
-				<button onclick="location.href='/Login/main/login.jsp'"
-					class="submit-button">로그아웃</button>
+				<button onclick="location.href='/Login/main/displayInfo.jsp'"
+					class="submit-button">회원정보 확인</button>
 				<br>
 				<button onclick="location.href='/Login/main/updateAccount.jsp'"
-					class="submit-button">회원정보수정</button>
+					class="submit-button">회원정보 수정</button>
 				<br>
 				<button onclick="location.href='/Login/main/deleteAccount.jsp'"
 					class="submit-button">회원삭제</button>
+				<br>
+				<button onclick="location.href='/Login/main/login.jsp'"
+					class="submit-button logout-button">로그아웃</button>
 			</div>
 		</div>
 		<div id="footer">

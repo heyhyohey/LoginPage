@@ -9,7 +9,7 @@ import java.sql.*;
  * @author hyoje
  * @version 1.0
  */
-public class jdbcUtil {
+public class JdbcUtil {
 	public static void close(ResultSet rs) {
 		if(rs != null) {
 			try {

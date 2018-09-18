@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link type="text/css" rel="stylesheet" href="/Login/css/main_css.css">
-<title>회원정보 수정 완료</title>
+<title>회원정보 확인</title>
 </head>
 <body>
 	<div id="wrap_area">
@@ -14,7 +14,7 @@
 		</div>
 		<div id="content">
 			<div id="input-area">
-				<p>회원정보 수정이 완료되었습니다!</p>
+				<p>회원정보수정이 완료되었습니다!</p>
 			</div>
 			<div id="menu-area">
 				<button onclick="location.href='/Login/main/main.jsp'"
