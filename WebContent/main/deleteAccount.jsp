@@ -16,12 +16,12 @@
 			<div id="input-area">
 				<form action="/Login/main/deleteFinish.jsp" method="post">
 					<div class="input-group">
-						<b>아이디</b><br> <input type="text" class="input-form"
-							name="userid" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
+						<b>비밀번호</b><br> <input type="password" class="input-form"
+							name="userPw" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
 					</div>
 					<div class="input-group">
-						<b>비밀번호</b><br> <input type="password" class="input-form"
-							name="userpw" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
+						<b>비밀번호 재입력</b><br> <input type="password" class="input-form"
+							name="userPw-confirm" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
 					</div>
 					<div class="input-group">
 						<b>"정말 탈퇴하겠습니다"를 입력하세요</b><br> <input type="text"

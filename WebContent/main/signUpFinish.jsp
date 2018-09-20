@@ -1,5 +1,16 @@
+<%@ page import="service.MakeAccountService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<jsp:useBean id="userInfo" class="model.UserInfo">
+	<jsp:setProperty name="userInfo" property="*" />
+</jsp:useBean>
+<%
+	MakeAccountService makeAccountService = MakeAccountService.getInstance();
+	makeAccountService.insertUser(userInfo);
+%>
 <!DOCTYPE html>
 <html>
 <head>
