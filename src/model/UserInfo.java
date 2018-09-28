@@ -1,5 +1,13 @@
 package model;
 
+/**
+ * <pre>
+ * 회원정보 클래스
+ * </pre>
+ * @author hyoje
+ * @version 1.0
+ * @since 2018-09-18
+ */
 public class UserInfo {
 	private String userId;
 	private String userPw;

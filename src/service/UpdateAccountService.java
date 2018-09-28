@@ -8,6 +8,14 @@ import jdbc.ConnectionProvider;
 import jdbc.JdbcUtil;
 import model.UserInfo;
 
+/**
+ * <pre>
+ * 계정정보 수정 서비스 클래스
+ * </pre>
+ * @author hyoje
+ * @version 1.0
+ * @since 2018-09-21
+ */
 public class UpdateAccountService {
 	private static UpdateAccountService instance = new UpdateAccountService();
 	
@@ -18,6 +26,12 @@ public class UpdateAccountService {
 	private UpdateAccountService() {
 	}
 	
+	/**
+	 * <pre>
+	 * 회원정보 수정 update연산 메소드
+	 * </pre>
+	 * @param userInfo
+	 */
 	public void updateUser(UserInfo userInfo) {
 		Connection conn = null;	
 		try {

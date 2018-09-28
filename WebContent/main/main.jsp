@@ -1,31 +1,6 @@
 <%@page import="service.LoginVerificationService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%
-	request.setCharacterEncoding("utf-8");
-	
-	String loginId = (String)session.getAttribute("userId");
-	
-	if(loginId == null) {
-		String userId = request.getParameter("userId");
-		String userPw = request.getParameter("userPw");
-		
-		LoginVerificationService loginService = LoginVerificationService.getInstance();
-		boolean isMatch = loginService.verifyLogin(userId, userPw);
-		
-		if(isMatch) {
-			session.setAttribute("userId", userId);
-			loginId = (String)session.getAttribute("userId");
-		} else {
-%>
-<script>
-	alert("로그인에 실패하였습니다.");
-	location.href = "/Login/main/login.jsp";
-</script>
-<%
-		}
-	}
-%>
+	pageEncoding="UTF-8" errorPage="/error/error.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +9,28 @@
 <link type="text/css" rel="stylesheet" href="/Login/css/main_css.css">
 </head>
 <body>
+	<%@ include file="/jspf/checkLoginSession.jspf" %>
+	<%	
+		request.setCharacterEncoding("utf-8");
+	
+		String userId = request.getParameter("userId");
+		String userPw = request.getParameter("userPw");
+
+		// 1. userId에 따른 userPw 비교
+		LoginVerificationService loginService = LoginVerificationService.getInstance();
+		boolean isMatch = loginService.verifyLogin(userId, userPw);
+		
+		if(isMatch) {
+			session.setAttribute("userId", userId);
+		} else {
+	%>
+	<script>
+		alert("아이디와 비밀번호를 확인해주세요.");
+		location.href = "/Login/main/login.jsp";
+	</script>
+	<%
+		}
+	%>
 	<div id="wrap_area">
 		<div id="header">
 			<h1>My Page</h1>

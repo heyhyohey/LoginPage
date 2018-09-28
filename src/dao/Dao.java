@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 // 커스텀 패키지
 import jdbc.JdbcUtil;
@@ -44,7 +43,7 @@ public class Dao {
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement("insert into users "
-					+ "values(?, ?, ?, ?, ?, ?, ?)");
+					+ "values(?, password(?), ?, ?, ?, ?, ?)");
 			pstmt.setString(1, userInfo.getUserId());
 			pstmt.setString(2, userInfo.getUserPw());
 			pstmt.setString(3, userInfo.getUserName());
@@ -117,29 +116,20 @@ public class Dao {
 	 * @throws SQLException
 	 */
 	public int update(Connection conn, UserInfo inputInfo) throws SQLException {
-		Statement stmt = null;
-		StringBuffer query = new StringBuffer("update users set ");
+		PreparedStatement pstmt = null;
 		try {
-			//삼항연산자
-			if (inputInfo.getUserPw() != null)
-				query.append("userpw = " + inputInfo.getUserPw() + ",");
-			if (inputInfo.getUserName() != null)
-				query.append("username = " + inputInfo.getUserName() + ",");
-			if (inputInfo.getPhoneNumber() != null)
-				query.append("phonenumber = " + inputInfo.getPhoneNumber() + ",");
-			if (inputInfo.getEmail() != null)
-				query.append("email = " + inputInfo.getEmail() + ",");
-			if (inputInfo.getAddress() != null)
-				query.append("address = " + inputInfo.getAddress() + ",");
-			if (inputInfo.getIntroduce() != null)
-				query.append("introduce = " + inputInfo.getIntroduce() + " ");
-
-			query.append("where userid = " + inputInfo.getUserId());
-
-			stmt = conn.createStatement();
-			return stmt.executeUpdate(query.toString());
+			pstmt = conn.prepareStatement("update users set userpw = ?, username = ?, phonenumber = ?," +
+					"email = ?, address = ?, introduce = ? where userid = ?");
+			pstmt.setString(1, inputInfo.getUserPw());
+			pstmt.setString(2, inputInfo.getUserName());
+			pstmt.setString(3, inputInfo.getPhoneNumber());
+			pstmt.setString(4, inputInfo.getEmail());
+			pstmt.setString(5, inputInfo.getAddress());
+			pstmt.setString(6, inputInfo.getIntroduce());
+			pstmt.setString(7, inputInfo.getUserId());
+			return pstmt.executeUpdate();
 		} finally {
-			JdbcUtil.close(stmt);
+			JdbcUtil.close(pstmt);
 		}
 	}
 

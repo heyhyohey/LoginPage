@@ -8,6 +8,14 @@ import jdbc.ConnectionProvider;
 import jdbc.JdbcUtil;
 import model.UserInfo;
 
+/**
+ * <pre>
+ * 계정정보 출력 서비스 클래스
+ * </pre>
+ * @author hyoje
+ * @version 1.0
+ * @since 2018-09-19
+ */
 public class DisplayInformationService {
 	private static DisplayInformationService instance = new DisplayInformationService();
 	
@@ -18,6 +26,13 @@ public class DisplayInformationService {
 	private DisplayInformationService() {
 	}
 	
+	/**
+	 * <pre>
+	 * 계정정보 select 메소드
+	 * </pre>
+	 * @param userId
+	 * @return UserInfo
+	 */
 	public UserInfo getInformation(String userId) {
 		Connection conn = null;
 		UserInfo userInfo = null;

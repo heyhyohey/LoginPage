@@ -15,21 +15,22 @@
 		</div>
 		<div id="content">
 			<div id="input-area">
-				<form action="/Login/main/signUpFinish.jsp" method="post">
+				<form action="/Login/main/signUpFinish.jsp" method="get">
+					<p>*는 필수입력 항목입니다.</p>
 					<div class="input-group">
-						<b>아이디</b><br> <input type="text" class="input-form"
+						<b>*아이디</b><br> <input type="text" class="input-form"
 							name="userId" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
 					</div>
 					<div class="input-group">
-						<b>비밀번호</b><br> <input type="password" class="input-form"
+						<b>*비밀번호</b><br> <input type="password" class="input-form"
 							name="userPw" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
 					</div>
 					<div class="input-group">
-						<b>비밀번호 재확인</b><br> <input type="password" class="input-form"
-							name="userpw-confirm" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
+						<b>*비밀번호 재확인</b><br> <input type="password" class="input-form"
+							name="userPw-confirm" maxlength="10" placeholder="10자 이내 영문,숫자"><br>
 					</div>
 					<div class="input-group">
-						<b>이름</b><br> <input type="text" class="input-form"
+						<b>*이름</b><br> <input type="text" class="input-form"
 							name="userName" maxlength="6" placeholder="6자 이내 한글 "><br>
 					</div>
 					<div class="input-group">

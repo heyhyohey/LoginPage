@@ -1,0 +1,11 @@
+<%
+	String loginId = (String)session.getAttribute("userId");
+
+	if(loginId != null) {
+%>
+<script type="text/javascript">
+	location.href = "/Login/main/main.jsp";
+</script>
+<%
+	}
+%>

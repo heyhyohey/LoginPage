@@ -2,12 +2,7 @@
 <%@page import="model.UserInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	String loginId = (String)session.getAttribute("userId");
 
-	DisplayInformationService displayService = DisplayInformationService.getInstance();
-	UserInfo userInfo = displayService.getInformation(loginId);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +11,23 @@
 <title>회원정보 확인</title>
 </head>
 <body>
+	<%
+		// 1. 세션이 존재하는지 검사
+		String loginId = (String)session.getAttribute("userId");
+	
+		if(loginId == null) {
+	%>
+	<script>
+		alert("세션이 만료되었습니다.")
+		location.href = "/Login/main/login.jsp";
+	</script>
+	<%
+		}
+		
+		// 2. 세션에 저장된 아이디로 유저정보를 읽음
+		DisplayInformationService displayService = DisplayInformationService.getInstance();
+		UserInfo userInfo = displayService.getInformation(loginId);
+	%>
 	<div id="wrap_area">
 		<div id="header">
 			<h1>Information</h1>
@@ -48,8 +60,10 @@
 				</div>
 			</div>
 			<div id="menu-area">
+				<button onclick="location.href='/Login/main/updateAccount.jsp'"
+					class="submit-button">회원정보 수정</button><br>
 				<button onclick="location.href='/Login/main/main.jsp'"
-					class="submit-button">메인 화면으로</button>
+					class="submit-button logout-button">이전으로</button>
 			</div>
 		</div>
 		<div id="footer">

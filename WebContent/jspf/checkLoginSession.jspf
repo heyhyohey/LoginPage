@@ -1,0 +1,12 @@
+<%
+	String loginId = (String)session.getAttribute("userId");
+	
+	if(loginId == null) {
+%>
+<script type="text/javascript">
+	alert("세션이 존재하지 않습니다.");
+	location.href = "/Login/main/login.jsp";
+</script>
+<%
+	}
+%>
